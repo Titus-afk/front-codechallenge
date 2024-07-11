@@ -1,0 +1,46 @@
+.dt {
+  thead {
+    background-color: light-dark(var(--grey-200), var(--black));
+    position: sticky;
+    width: 100%;
+    top: 0px;
+    th {
+      text-align: left;
+      padding: 0;
+    }
+    .cell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      user-select: none;
+      padding: 8px 24px;
+      gap: 12px;
+      h5 {
+        flex-shrink: 0;
+        color: light-dark(var(--black), var(--white));
+      }
+      span {
+        text-decoration: none;
+        font-size: 16px;
+        visibility: hidden;
+
+        &.active {
+          visibility: visible;
+        }
+      }
+
+      &:hover {
+        background-color: light-dark(var(--grey-400), var(--grey-600));
+
+        h5 {
+          text-decoration: underline;
+        }
+
+        span {
+          visibility: visible;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.dt {
+  tbody {
+    td {
+      width: 50px;
+
+      .cell {
+        display: flex;
+        color: light-dark(var(--black), var(--white));
+        padding: 8px 24px;
+        text-align: left;
+      }
+      .cell--condensed {
+        padding: 2px 24px;
+      }
+    }
+    tr {
+      &:hover {
+        background: light-dark(var(--grey-200), var(--grey-600));
+      }
+    }
+  }
+}

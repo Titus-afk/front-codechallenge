@@ -1,0 +1,28 @@
+.pagination {
+  display: flex;
+  gap: 4px;
+  > div {
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    color: light-dark(var(--black), var(--white));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover,
+    &.active {
+      background-color: var(--blue-800);
+      color: var(--white);
+    }
+    &.disabled {
+      background: none;
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    span {
+      font-size: 16px;
+    }
+  }
+}

@@ -1,52 +1,116 @@
-# Frond End Developer - Code Challenge
+# Custom Datatable - Task 2
 
-As a front-end developer, you must do a code challenge. You have 3 options:
+This is a zero-dependency data table component is a powerful and flexible tool that can enhance any project by providing essential data management capabilities.
 
-- Do task 1 (Article Management System).
-- OR do task 2 (Data Table Component).
+![image](https://github.com/Titus-afk/datatable_zero_dependency/assets/53218631/26aba5aa-52e8-4da0-bf1d-bf38ae657c42)
 
-Depending on your choice and the result we evaluate your expertise and seniority.
 
-## Task 1
+I've added several customisation features for this datatable which can be seen on this live [link](https://datatable-custom.netlify.app/).
 
-Develop a dashboard to manage articles with these rules:
+## Features
 
-- There is no API. You have to mock the API in a separate layer in the code. So, we can replace it with a real API without touching other parts of your code.
-- The edit page and Delete confirmation dialog need to be included.
-- You must check user mistakes on filling in forms (like email address, required fields, etc.).
-- Protected pages should not be available for guest users.
-- Wysiwyg editor is not required.
-- Tags field is a combobox which you can select some tags or use custom tags.
-- Design them based on your assumption
+- Light/dark mode toggle
+- Sorting with default sort
+- Column customization - Show / Hide
+- Fully responsive
+- Searchable
+- Page size selection
+- Pagination
 
-## Task 2
+## Installation
 
-Write a data table component with these features:
+- NodeJS version : v20.12.2
 
-- Support TypeScript.
-- Support pagination.
-- Support page size.
-- Support simple search (so we can just type a query and filter rows).
-- Support column customization.
-- Support sort fields.
-- Support dark mode.
-- Write some examples to show your component’s features.
+- Clone the repository
 
-## General Requirements
+- Navigate to project
 
-- Use ReactJS
-- Write necessary tests, but not with high coverage.
-- Remove all unused codes if you use a boilerplate or framework.
-- Write an instruction to run the project.
-- All pages and components should be responsive.
-- Do anything else that can impress us, but don’t overwork.
-- You should use a linter like PrettierJS or any others.
-- Don’t commit the .vscode or .idea directory.
-- Mention the required NodeJS version
-  
-### Deliverables for the Code Challenge
-- Code and Documentation: Include all code and documentation necessary to reproduce the experiments and results.
-  
-### Submission
-- Please submit a GitHub link with your work and fork the repository for collaboration.
-- You have 1 week to send the challenge!
+```
+cd my-project
+```
+
+- Install packages
+
+```
+npm install
+```
+
+- To run project
+
+```
+npm run dev
+```
+
+## How to Use
+
+Data Format
+
+```
+const data = [
+{ id: 1, name: "Simon", location: "Canada", phoneNumber: "(613) 555-1234" },
+{ id: 2, name: "Emily", location: "USA", phoneNumber: "(202) 555-2345" }]
+```
+
+```
+const columns = [
+    {
+    colName: "id",
+    label: "ID",
+    visibility: true,
+  },
+  {
+    colName: "name",
+    label: "Name",
+    visibility: true,
+  },
+  {
+    colName: "location",
+    label: "Location",
+    visibility: true,
+  },
+  {
+    colName: "phoneNumber",
+    label: "Phone Number",
+    visibility: true,
+  },]
+```
+
+Default usage
+
+```
+<DataTable data={data} columns={columns} />
+```
+
+Light | Dark mode (use one as required)
+
+```
+<DataTable mode={light|dark} data={data} columns={columns} />
+```
+
+Set default sort
+
+```
+<DataTable mode={light|dark} data={data} columns={columns} defaultSort={{ col: "name", type: "asc" }}/>
+```
+
+Set default page size (use one as required)
+
+```
+<DataTable mode={light|dark} data={data} columns={columns} defaultPageSize={10|20|30|100}/>
+```
+
+Condensed Rows (use one as required)
+
+```
+<DataTable mode={light|dark} data={data} condensed={true}/>
+```
+
+## Running Tests
+
+To run tests using vitest, run the following command.
+
+Testing Framework : Vitest, jest-dom, react-testing-library
+
+```bash
+  npm run test
+```
